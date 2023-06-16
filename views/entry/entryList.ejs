@@ -1,0 +1,27 @@
+
+    <h3>Entry List</h3>
+    <div class="card-columns">
+      <% entries.forEach(entry => {%>
+      <div class="card">
+        <div
+          class="imageupload"
+          style="background-image: url('./uploads/<%= entry.entryImage %>')"
+        >
+        </div>
+        <div class="card-body">
+          <p class="date"><%= entry.uploadDate %></p>
+
+          <h1 class="card-title"><%= entry.title %></h1>
+          <p class="card-text"><%= entry.description %></p>
+          <div class="edit-delete">
+            <form action="/delete/<%=entry._id%>/?method=delete" method="post">
+              <div class="entry">
+                <button>delete</button>
+                <a href="/edit/<%=entry._id%>/">Edit</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <% })%>
+    </div>

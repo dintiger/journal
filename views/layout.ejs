@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>Document</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
+      </style>
+  </head>
+  <body>
+    <nav>
+      <% if (currentUser) { %>
+      <a href="/">My Journal</a>
+      <a href="/entryList/create">Create Journal</a>
+      <a href="/user/logout">Logout</a>
+      <a href="/exploreEntry">Explore Journals</a>
+
+      <div class="profile">
+        <p class="username">Hello <%= currentUser.name %></p>
+        <div class="profile-image">
+          <img src="<%= currentUser.profilePicture %>" alt="..." />
+        </div>
+      </div>
+      <% } else { %>
+      <a href="/user/register">Register</a>
+      <a href="/user/login">Login</a>
+      <a href="/exploreEntry">Explore Journals</a>
+
+      <% } %>
+    </nav>
+
+    <%- body %>
+  </body>
+</html>

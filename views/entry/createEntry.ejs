@@ -1,0 +1,22 @@
+<h1>Create Journal</h1>
+
+<form action="/entryList/create" method="post" enctype="multipart/form-data">
+  <div>
+    <label>Entry Image</label>
+    <input class="form-control" type="file" name="entryImage" />
+  </div>
+  <div>
+    <label>Title</label>
+    <input class="form-control" type="text" name="title" />
+  </div>
+
+  <div>
+    <label>Description</label>
+    <textarea class="form-control" type="text" name="description"></textarea>
+  </div>
+
+  <div>
+    <button type="button" class="btn btn-secondary">Close</button>
+    <button type="submit" class="btn btn-primary">Save changes</button>
+  </div>
+</form>
